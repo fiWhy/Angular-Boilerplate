@@ -1,0 +1,15 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "karma/karma-0.12.d.ts": {
+      "commit": "f6a9d4d387a900e57abe569f5f464075bcfd1799"
+    },
+    "node/node-0.12.d.ts": {
+      "commit": "f6a9d4d387a900e57abe569f5f464075bcfd1799"
+    }
+  }
+}
