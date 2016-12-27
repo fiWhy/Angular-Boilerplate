@@ -6,7 +6,7 @@
   "scripts": {
     "prod": "set NODE_ENV=production&& npm run build",
     "dev": "set NODE_ENV=development&& npm run build",
-    "start": "npm i && tsd install && npm run test && npm run serve",
+    "start": "npm i && npm run test && npm run serve",
     "build": "npm run webpack && npm run test",
     "test": "karma start config/karma.conf.js",
     "serve": "node tools/webpack-server",
@@ -15,9 +15,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/angular": "^1.5.22",
     "@types/angular-mocks": "^1.5.8",
     "@types/jasmine": "^2.5.38",
     "@types/jquery": "^2.0.34",
+    "@types/karma": "^0.13.33",
+    "@types/node": "^6.0.54",
     "@types/webpack": "^2.0.0",
     "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.24.1",
