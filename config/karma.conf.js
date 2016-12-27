@@ -1,64 +1,44 @@
 // Karma configuration
 // Generated on Sat Nov 05 2016 15:34:26 GMT+0200 (FLE Standard Time)
 var mainConfig = require('./main');
-var webpackConfig = require('./webpack');
+var webpackConfig = require('./webpack.test');
 module.exports = function (config) {
     config.set({
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
         basePath: '..',
-
+        mime: {
+            'text/x-typescript': ['ts', 'tsx']
+        },
 
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
         frameworks: ['jasmine'],
 
         plugins: [
-            'karma-coverage',
             'karma-jasmine',
-            'karma-typescript',
+            'karma-coverage',
             'karma-chrome-launcher',
-            'karma-webpack'
+            'karma-webpack',
+            'karma-spec-reporter'
         ],
 
 
         // list of files / patterns to load in the browser
         files: [
-            './src/vendor.ts',
-            './src/app.ts',
-            './src/**/*.spec.ts'
-        ],
-
-
-        // list of files to exclude
-        exclude: [
-            // "src/vendor.js"
+            'src/tests.ts'
         ],
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            "./src/!(*spec).ts": ['webpack', 'coverage'],
-            "src/**/*.spec.ts": ['karma-typescript']
+            'src/tests.ts': ['webpack']
         },
 
-        webpack: {
-            resolve: webpackConfig.resolve,
-            module: {
-                loaders: webpackConfig.module.loaders,
-                preLoaders: [
-                    // instrument only testing sources with Istanbul
-                    {
-                        test: /\!(spec).ts$/,
-                        include: mainConfig.src,
-                        loader: 'istanbul-instrumenter'
-                    }
-                ]
-            },
-
+        webpack: webpackConfig,
+        webpackMiddleware: {
+            noInfo: true
         },
-
-
         coverageReporter: {
             type: 'html',
             dir: 'coverage/'
@@ -68,7 +48,11 @@ module.exports = function (config) {
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress', "coverage"],
+        reporters: [
+            'dots',
+            'spec',
+            'coverage'
+        ],
 
 
         // web server port

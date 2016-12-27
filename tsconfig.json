@@ -1,9 +1,10 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "module":"commonjs",
         "target": "es6",
         "moduleResolution": "node",
-        "sourceMap": true,
+        "inlineSourceMap": true,
+        "sourceMap": false,
         "typeRoots": [
             "./node_modules/@types/"
         ]

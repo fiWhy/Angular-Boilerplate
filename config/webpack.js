@@ -4,6 +4,7 @@
 var config = require('./main');
 var webpack = require('webpack');
 var webpackPluginHtml = require('html-webpack-plugin');
+var loaders = require('./loaders');
 module.exports = {
     context: config.src,
     entry: {
@@ -14,10 +15,7 @@ module.exports = {
         extensions: ['', '.js', '.ts', '.html']
     },
     module: {
-        loaders: [
-            { test: /\.(ts|tsx)$/, loaders: ['ts-loader'] },
-            { test: /\.html$/, loaders: ['html-loader'] }
-        ]
+        loaders: loaders
     },
     plugins: [
         new webpackPluginHtml({
