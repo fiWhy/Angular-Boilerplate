@@ -9,10 +9,13 @@
       "commit": "f6a9d4d387a900e57abe569f5f464075bcfd1799"
     },
     "node/node-0.12.d.ts": {
-      "commit": "f6a9d4d387a900e57abe569f5f464075bcfd1799"
+      "commit": "3d62aeb78f15aff68def6762b912e744f29fe042"
     },
     "angular/legacy/angular-1.4.d.ts": {
       "commit": "db51fd6e8c97d2c1005eb64869c194c98de69ab2"
+    },
+    "angular/legacy/angular-mocks-1.2.d.ts": {
+      "commit": "3d62aeb78f15aff68def6762b912e744f29fe042"
     }
   }
 }

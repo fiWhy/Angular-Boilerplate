@@ -1,6 +1,5 @@
 export class AppController {
-    text: string;
+    public text: string;
     constructor() {
-        this.text = 'Hello';
     }
 }

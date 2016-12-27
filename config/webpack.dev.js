@@ -6,6 +6,11 @@ var webpackConfig = require('./webpack');
 var merge = require('webpack-merge');
 
 module.exports = merge(webpackConfig, {
+    entry: {
+        vendor: config.src + '/vendor.ts',
+        app: config.src + '/app.ts'
+    },
+    
     output: {
         path: config.dist,
         filename: '[name].bundle.js'

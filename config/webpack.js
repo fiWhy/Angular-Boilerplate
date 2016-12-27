@@ -7,10 +7,6 @@ var webpackPluginHtml = require('html-webpack-plugin');
 var loaders = require('./loaders');
 module.exports = {
     context: config.src,
-    entry: {
-        vendor: config.src + '/vendor.ts',
-        app: config.src + '/app.ts'
-    },
     resolve: {
         extensions: ['', '.js', '.ts', '.html']
     },

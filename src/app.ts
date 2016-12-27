@@ -4,7 +4,6 @@
 import Modules from './modules';
 import Filters from './filters';
 import Directives from './directives';
-console.log('Hello')
 angular.module('app', [
     'ui.router',
     Filters.name,

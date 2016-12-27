@@ -1,9 +1,11 @@
 /**
  * Created by Asus on 05.11.2016.
  */
-var config = require('./main');
+var webpackConfig = require('./webpack');
 var loaders = require('./loaders');
-module.exports = {
+var merge = require('webpack-merge');
+
+module.exports = merge(webpackConfig, {
     devtool: 'inline-source-map',
     module: {
         loaders: loaders,
@@ -11,6 +13,7 @@ module.exports = {
             {
                 test: /\.ts$/,
                 exclude: [
+                    /test\.ts$/,
                     'node_modules',
                     /\.spec\.ts$/
                 ],
@@ -18,4 +21,4 @@ module.exports = {
             }
         ]
     }
-};
+});

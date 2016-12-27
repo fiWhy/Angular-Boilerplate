@@ -1,15 +1,13 @@
-/**
- * Created by Asus on 05.11.2016.
- */
-import { AppService } from '../services/app';
+describe("First app testing", function () {
+    let AppService;
+    beforeEach(angular.mock.module('app'));
+    beforeEach(angular.mock.inject((_AppService_) => {
+        AppService = _AppService_;
+    }))
 
-describe("A suite is just a function", function() {
-    it("and so is a spec", function() {
-        expect(1).toBe(1);
-    });
-
-    it("and so is a spec", function() {
-        expect(1).toBe(1);
+    it("should check for data", function () {
+        let data = 'Hello World!';
+        expect(AppService.checkForData(data)).toBe(data);
     });
 });
 
